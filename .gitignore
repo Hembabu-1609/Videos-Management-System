@@ -9,17 +9,12 @@ yarn-error.log
 .env.local
 .env.*.local
 
-# IDE specific files
-.idea/
+# IDE
 .vscode/
+.idea/
 *.swp
 *.swo
 
-# OS generated files
+# OS
 .DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
 Thumbs.db 
