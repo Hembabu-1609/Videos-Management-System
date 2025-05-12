@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Login</title>
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap/dist/css/bootstrap.css"
+    />
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script>
+      $(function () {
+        $("#btnLogin").click(() => {
+          var userid = $("#UserId").val();
+          var password = $("#Password").val();
+          $.ajax({
+            method: "get",
+            url: "http://127.0.0.1:5000/users",
+            success: (users) => {
+              for (var user of users) {
+                if (user.UserId === userid && user.Password === password) {
+                  sessionStorage.setItem("userid", userid);
+                  location.href = "videos.html";
+                  break;
+                } else {
+                  $("#msg").html("Invalid Credentials").css("color", "red");
+                }
+              }
+            },
+          });
+        });
+      });
+    </script>
+  </head>
+  <body class="container-fluid">
+    <h3>User Login</h3>
+    <div>
+      <dl>
+        <dt>UserId</dt>
+        <dd><input type="text" id="UserId" /></dd>
+        <dt>Password</dt>
+        <dd><input type="password" id="Password" /></dd>
+      </dl>
+    </div>
+    <button id="btnLogin">Login</button>
+    <p></p>
+  </body>
+</html>

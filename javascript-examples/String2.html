@@ -1,0 +1,15 @@
+<script>
+    var title = prompt("Enter Title");
+    var loginLabel = prompt("Enter Label");
+    var loginType = prompt("Enter Element Type",text|email|password);
+    var loginButton = prompt("Enter Button Text");
+    var login = `
+            <h3>${title}</h3>
+            <dl>
+                <dt>${loginLabel}</dt>
+                <dd><input type=${loginType}></dd>
+            </dl>
+            <button>${loginButton}</button>
+            `;
+            document.write(login);
+</script>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Widgets</title>
+    <link rel="stylesheet" href="../node_modules/jquery-ui/jquery-ui.css">
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/jquery-ui/jquery-ui.js"></script>
+    <script>
+        $(function(){
+            $("#topics").accordion();
+            $("#dept").datepicker();
+            $("#submit").button();
+            $("#menu").menu();
+        })
+    </script>
+    <style>
+        #dept{
+            margin-bottom: 20px;
+        }
+        #topics{
+            margin-bottom: 20px;
+        }
+        #submit{
+            margin-bottom: 20px;
+        }
+        .ui-menu{
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        Departure : <input type="text" id="dept">
+    </div>
+    <div id="topics">
+        <h2>HTML</h2>
+        <div>
+            <p>Hyper Text Markup Language</p>
+        </div>
+        <h2>CSS</h2>
+        <div>
+            <p>Cascading Style Sheets</p>
+        </div>
+        <h2>JavaScript</h2>
+        <div>
+            <p>It manuplates DOM</p>
+        </div>
+    </div>
+    <div>
+        <button id="submit">Submit</button>
+    </div>
+    <ul id="menu">
+        <li><div>Electronics</div>
+            <ul>
+                <li><div>Televisions</div>
+                    <ul>
+                        <li>SONY TV</li>
+                        <li>SAMSUNG TV</li>
+                    </ul>
+                    <li><div>Mobiles</div>
+                        <ul>
+                            <li>IQOO Neo 6</li>
+                            <li>Iphone 14 Pro Max</li>
+                        </ul>
+                    </li>
+                    
+                </li>                
+            </ul>
+        </li>
+        
+        <li><div>Fashions</div>
+            <ul>
+                <li><div>Clothing</div>
+                    <ul>
+                        <li>Men's Clothing</li>
+                        <li>Women's Clothing</li>
+                        <li>Kid's Clothing</li>
+                    </ul>
+                </li>                
+                <li><div>Footwear</div>
+                    <ul>
+                        <li>Shoes</li>
+                        <li>Flip Flops</li>
+                        <li>Chappals</li>
+                    </ul>
+                </li>                
+            </ul>
+        </li>
+       
+        <li><div>Laptops</div>
+            <ul>
+                <li><div>Dell Laptop</div>
+                    <ul>
+                        <li>Dell inspiron 15</li>
+                        <li>Dell inspiron 3000</li>
+                    </ul>
+                    <li><div>Lenovo Laptop</div>
+                        <ul>
+                            <li>Lenovo Thinkpad</li>
+                            <li>Lenovo Thinkpad pro</li>
+                        </ul>
+                    </li>
+                                  
+                </li>
+                
+            </ul>
+        </li>            
+    </ul>
+</body>
+</html>

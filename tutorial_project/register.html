@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="../node_modules/jquery-ui/jquery-ui.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/jquery-ui/jquery-ui.js"></script>
+    <script>
+        $(function(){
+            $("#UserId").keyup(()=>{
+                var userid = $("#UserId").val();
+                $.ajax({
+                    method:"get",
+                    url:"http://127.0.0.1:5000/users",
+                    success: (users)=>{
+                        for(var user of users){
+                            if(user.UserId===userid){
+                                $("#UserError").html("User Id Taken - Try Another").css("color","red");
+                                break;
+                            } else {
+                                $("#UserError").html("User Id Available").css("color","green");
+                            }
+                        }
+                    }
+                })
+            })
+        
+            $("#btnRegister").click(()=>{
+                var user = {
+                    "UserId": $("#UserId").val(),
+                    "UserName": $("#UserName").val(),
+                    "Password": $("#Password").val(),
+                    "Age": $("#Age").val(),
+                    "Mobile": $("#Mobile").val(),
+                    "Email": $("#Email").val(),
+                };
+                $.ajax({
+                    method: "post",
+                    url: "http://127.0.0.1:5000/registeruser",
+                    data : user
+                })
+                alert("Registered Successfully");
+                location.href ="userlogin.html";
+            })
+        })
+    </script>
+    <style>
+        .center {
+            border: 2px solid;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+        dl dd{
+            margin-bottom: 20px;
+        }
+        .image{
+            background-image: url(../public/images/background1.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            
+        }
+    </style>
+</head>
+<body class="container-fluid image">
+    <div class="center">
+        <div>
+            <div>
+                <h2 class="mb-4">User Registration Form</h2>
+            </div>
+            <div>
+                <dl>
+                    <dt><span class="bi bi-person ">UserId</span></dt>
+                    <dd><input class="rounded" type="text" id="UserId" placeholder="Enter UserId"></dd>
+                    <dt><span class="bi bi-person-fill">UserName</span></dt>
+                    <dd><input class="rounded" type="text" id="UserName" placeholder="Enter UserName"></dd>
+                    <dt><span class="bi bi-eye-fill">Password</span></dt>
+                    <dd><input class="rounded" type="password" id="Password" placeholder="Enter Password"></dd>
+                    <dt><span class="bi bi-123">Age</span></dt>
+                    <dd><input class="rounded" type="number" id="Age" placeholder="Enter Age"></dd>
+                    <dt><span class="bi bi-phone-fill">Mobile</span></dt>
+                    <dd><input class="rounded" type="text" id="Mobile" placeholder="Enter Mobile Number"></dd>
+                    <dt><span class="bi bi-envelope-fill">Email</span></dt>
+                    <dd><input class="rounded" type="text" id="Email" placeholder="Enter E-Mail Address"></dd>
+                </dl>
+            </div>
+            <div>
+                <a href="index.html"><button class="rounded bg-danger text-white">Back</button></a>
+                <button class="rounded bg-success text-white" id="btnRegister">Register</button><br>
+                <a href="userlogin.html">Existing User?</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

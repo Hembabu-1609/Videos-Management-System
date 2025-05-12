@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <title>Details</title>
+    <style>
+        nav {
+            width: 150px;
+            border: 1px solid gray;
+            height: 350px;
+            padding: 20px;
+            overflow: auto;
+        }
+        nav div {
+            background-color: black;
+            color: white;
+            width: 100px;
+            padding: 4px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            margin-top: 5px;
+            margin-left: 10px;
+            margin-right: 5px;
+        }
+        menu {
+            margin-left: -20px;
+        }
+        nav div:hover {
+            background-color: blue;
+            color: white;
+            font-size: 15px;
+            cursor: grab;
+            transition: 2s;
+        }
+    </style>
+</head>
+<body>
+    <nav><div>Home</div>
+        <menu>
+            <details>
+                <summary>
+                    Electronics
+                </summary>
+                <div>Mobiles</div>
+                <div>Televisions</div>
+                <div>Watches</div>
+            </details>
+            <details>
+                <summary>
+                    Fashion
+                </summary>
+                <div>Men's Wear</div>
+                <div>Women's Wear</div>
+                <div>Kid's Wear</div>
+            </details>
+            <details>
+                <summary>
+                    Footwear
+                </summary>
+                <div>Chappals</div>
+                <div>Sneakers</div>
+                <div>Shoes</div>
+            </details>
+        </menu>
+    </nav>
+</body>
+</html>

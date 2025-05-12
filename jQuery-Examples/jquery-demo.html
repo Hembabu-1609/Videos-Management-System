@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script>
+         $(function(){
+            $("h1").text("jQuery");
+            $("#title").html("<i><b>Write less, do more</i></b>").css("color","blue");
+            $("#title").append("-End");
+            $("#title").prepend("Start-");
+            $("#title").before("Above line");
+            $("#title").after("Below line");
+         })
+    </script>
+</head>
+<body>
+    <h1></h1>  
+    <p id="title"></p>
+</body>
+</html>

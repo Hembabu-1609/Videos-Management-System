@@ -1,0 +1,7 @@
+{
+    "title" : "APPLE iPhone 14 Pro Max (Space Black, 128 GB)",
+    "price" : 12799.50,
+    "features" : ["128 GB ROM","17.02 cm (6.7 inch) Super Retina XDR Display","48MP + 12MP + 12MP | 12MP Front Camera","A16 Bionic Chip, 6 Core Processor Processor","1 Year Warranty for Phone and 6 Months Warranty for In-Box Accessories"],
+    "photo" : "../public/images/Iphone.jpg",
+    "rating" : {"rate": 4.6,"ratings": 1411,"reviews":105}
+}

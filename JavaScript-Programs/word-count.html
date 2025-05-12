@@ -1,0 +1,16 @@
+<script>
+    function countWords(str, word) {
+    var words = str.split(" ");
+    for(var i = 0; i < words.length; i++){
+        if(words[i] === word){
+            count++;
+        }
+    }
+    return count;
+}
+var str = prompt("Enter a string: ");
+var word = prompt("Enter a word to search for: ");
+var count = countWords(str, word);
+//console.log(countWords(str,word));
+alert("The word " + word + " appears " + count + " times in the string.");
+</script>

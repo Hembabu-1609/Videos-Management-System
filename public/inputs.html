@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input</title>
+    <style>
+        ul {
+            list-style: none;
+            height: 80px;
+            width: 150px;
+            overflow: auto;
+            padding-left: -30px;
+            border: 2px solid green;
+        }
+        progress {
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Form Elements</legend>
+            <dl>
+                <dt>Password</dt>
+                <dd><input type="password" name="password" minlength="8" maxlength="15" placeholder="enter password" pattern="{8,10}"></dd>
+                <dt>Number</dt>
+                <dd><input type="number" name="number" minlength="8" step="1" maxlength="15" placeholder="enter password" pattern="{8,10}"></dd>
+                <dt>Range</dt>
+                <dd><input type="range" name="range" min="1" max="10" step="1"></dd>
+                <dt>Color</dt>
+                <dd><input type="color" name="color" value="#ff0000"></dd>
+                <dt>E-Mail</dt>
+                <dd><input type="email" name="email" placeholder="enter email" pattern="\w{4,}@gmail.com"></dd>
+                <dt>URL</dt>
+                <dd><input type="url" name="url" placeholder="enter url"></dd>
+                <dt>Telephone</dt>
+                <dd><input type="tel" name="phone number" placeholder="enter phonenumber" pattern="\d{10}"></dd>
+                <dt>Date & Time</dt>
+                <dd><input type="date" name="date "></dd>
+                <dt>File</dt>
+                <dd><input type="file" name="file" accept=".pdf,.jpg" multiple></dd>
+                <dt>Radio</dt>
+                <dd><input type="radio" name="gender"><label>Male</label></dd>
+                <dd><input type="radio" name="gender"><label>Female</label></dd>
+                <dt>CheckBox</dt>
+                <ul>
+                    <li><input type="checkbox" value="ui" name="course" ><label>UI</label></li>
+                    <li><input type="checkbox" value="html" name="course" ><label>HTML</label></li>
+                    <li><input type="checkbox" value="css" name="course" ><label>CSS</label></li>
+                    <li><input type="checkbox" value="java" name="course" ><label>JAVA</label></li>
+                    <li><input type="checkbox" value="javascript" name="course" ><label>JAVASCRIPT</label></li>
+                    <li><input type="checkbox" value="nodejs" name="course" ><label>NODE JS</label></li>
+                </ul>
+                <dt>Dropdown List</dt>
+                <p>Select Course</p>
+                <select>
+                    <optgroup>
+                        <option>HTML</option>
+                        <option>CSS</option>
+                        <option disabled>JAVA</option>
+                        <option>JAVASCRIPT</option>
+                        <option>NODE JS</option>
+                    </optgroup>
+                </select>
+                <dt>Text Area</dt>
+                <dd><textarea rows="5" cols="40"></textarea></dd>
+                <dt>Meter</dt>
+                <dd><meter min="1" max="100" value="25" low="10" high="90"></meter></dd>
+                <dt>Progress</dt>
+                <dd>
+                    <progress min="1" max="100"></progress>
+                </dd>
+                <dt>
+                    <button>Submit</button>
+                </dt>
+            </dl>
+        </fieldset>
+    </form>
+</body>
+</html>

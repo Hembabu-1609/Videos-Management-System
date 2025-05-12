@@ -1,0 +1,27 @@
+<script>
+    
+const row = 3; // Can be any odd number
+let diamond = '';
+
+for(let i = 1; i <= row; i++) {
+  for(let j = 1; j <= row - i; j++) {
+    diamond += ' ';
+  }
+  for(let k = 1; k <= 2 * i - 1; k++) {
+    diamond += '*';
+  }
+  diamond += '\n';
+}
+
+for(let i = row - 1; i >= 1; i--) {
+  for(let j = 1; j <= row - i; j++) {
+    diamond += ' ';
+  }
+  for(let k = 1; k <= 2 * i - 1; k++) {
+    diamond += '*';
+  }
+  diamond += '\n';
+}
+
+console.log(diamond);
+</script>

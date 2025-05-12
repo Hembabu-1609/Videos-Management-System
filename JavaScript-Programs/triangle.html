@@ -1,0 +1,12 @@
+<script>
+    function findTriangleType(side1,side2,side3){
+        if(side1==side2 && side1==side3){
+            document.write("Given sides are to Equilateral Triangle");
+        }else if(side1==side2||side1==side3||side2==side3){
+            document.write("Given sides are to Isosceles Triangle");
+        }else{
+            document.write("Given sides are to Scalene Triangle");
+        }
+    }
+    findTriangleType(10,10,10);
+</script>

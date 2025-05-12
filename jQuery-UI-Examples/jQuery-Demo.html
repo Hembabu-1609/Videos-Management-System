@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery-UI</title>
+    <link rel="stylesheet" href="../node_modules/jquery-ui/jquery-ui.css">
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/jquery-ui/jquery-ui.js"></script>
+    <script>
+        $(function(){
+            $("img").draggable();
+            $("ol").sortable();
+            $("#img").resizable();
+        })
+    </script>
+    <style>
+        img{
+            padding-left: 30px;
+            padding-top: 20px;
+        }
+        ol li{
+            border: 2px solid green;
+            border-radius: 5px;
+            width: 100px;
+            padding: 5px;
+            margin-bottom: 5px;
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <img src="../public/images/iphone14promax.jpg" width="150" height="150">
+    <ol>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>BootStrap</li>
+        <li>jQuery</li>
+        <li>AJAX</li>
+        <li>jQuery UI</li>
+        <li>MongoDB</li>
+    </ol>
+    <img id="img" src="../public/images/iqooneo6.jpg" width="150" height="150">
+</body>
+</html>

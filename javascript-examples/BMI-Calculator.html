@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        function CalculateClick(){
+            var height = parseInt(document.getElementById("txtHeight").value)/100;
+            var weight = parseInt(document.getElementById("txtWeight").value);
+            var bmi =weight/Math.pow(height,2);
+            document.getElementById("msg").innerHTML = "You Body Mass Index is " + "<b>" + Math.round(bmi)  + "</b>";
+        }
+        
+    </script>
+</head>
+<body class="container-fluid bg-light">
+    <div>
+        <div class="d-flex" style="margin-left: 100px; margin-right: 100px;">
+            <img src="../public/images/Component21.svg" class="me-4 mt-3" width="90" height="90">
+            <div>
+                <h3 style="color: rgb(199, 41, 41);"  class="mt-3">BMI Calculator</h3>
+                <h3 style="color: rgb(199, 41, 41);"  class="mt-1">Body Mass Index</h3>
+            </div>
+        </div>
+        <div class="rounded border" style="margin-left: 100px; margin-right: 100px;margin-top: 20px;">
+            <div class="row mt-3 mb-4">
+                <dl class="col ms-4">
+                    <dt>GENDER</dt>
+                    <div class="mb-4">
+                        <dd><input type="radio" name="gender" checked><label>Male</label></dd>
+                        <dd><input type="radio" name="gender"><label>Female</label></dd>
+                    </div>
+                </dl>
+                <dl class="col">
+                    <dt>AGE</dt>
+                    <dd class="mb-4"><input type="number" name="age" required>&nbsp;&nbsp;&nbsp;age is between 2yrs to 120yrs</dd>
+                </dl>
+            </div>
+            <div class="row mt-3 mb-4">
+                <dl class="col ms-4 ">
+                    <dt>HEIGHT</dt>
+                    <dd class="mb-4"><input id="txtHeight" type="number" name="height" required></dd>
+                </dl>
+                <dl class="col">
+                    <dt>WEIGHT</dt>
+                    <dd class="mb-4"><input id="txtWeight" class="mb-3" type="number" name="weight" required></dd>
+                </dl>
+            </div>
+            <div class="row mt-4 mb-4">
+                <div class="col text-center mt-3">
+                    <button class="btn btn-success"  onclick="CalculateClick()" style="width: 150px;">Calculate</button>
+                </div>
+            </div>
+            <div align="center" class="row mt-4 ">
+                <div class="col text-center mt-2">
+                    <p id="msg"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>

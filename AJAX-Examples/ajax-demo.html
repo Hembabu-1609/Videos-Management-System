@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX Demo</title>
+    <script>
+        function bodyload(){
+            var now = new Date();
+            document.getElementById("demo").innerHTML = `Page Last accessed  on : ${now.toLocaleTimeString()}`
+        }
+        function GetHelp(){
+            var http = new XMLHttpRequest();
+            http.open("GET","../data/ajax_demo.txt");
+            http.send();
+            http.onreadystatechange = function(){
+                if(http.readyState == 4){
+                    document.getElementById("container").innerHTML = http.responseText;
+                }
+            }
+        }
+        function GetData(){
+            var http = new XMLHttpRequest();
+            http.open("GET","../data/product.json", true);
+            http.send();
+            http.onreadystatechange = function(){
+                if(http.readyState == 4){
+                    var product = JSON.parse(http.responseText);
+                    document.getElementById("container").innerHTML = product.title;
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <h2>AJAX Demo</h2>
+    <p id="demo"></p>
+    <div style="background-color: Red; height: 150px; padding: 10px;">
+        <div style="color: white;">AJAX Area</div><br>
+        <button onclick="GetHelp()">Help</button>
+        <button onclick="GetData()">Get Data</button>
+        <br><br>
+        <pre id="container"></pre>
+    </div>
+</body>
+</html>
